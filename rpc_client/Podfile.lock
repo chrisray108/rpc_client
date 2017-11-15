@@ -1,0 +1,71 @@
+PODS:
+  - !ProtoCompiler (3.4.0):
+    - Protobuf (~> 3.0)
+  - !ProtoCompiler-gRPCPlugin (1.7.1):
+    - !ProtoCompiler (= 3.4.0)
+    - gRPC-ProtoRPC (= 1.7.1)
+  - BoringSSL (9.1):
+    - BoringSSL/Implementation (= 9.1)
+    - BoringSSL/Interface (= 9.1)
+  - BoringSSL/Implementation (9.1):
+    - BoringSSL/Interface (= 9.1)
+  - BoringSSL/Interface (9.1)
+  - gRPC (1.7.1):
+    - gRPC-RxLibrary (= 1.7.1)
+    - gRPC/Main (= 1.7.1)
+  - gRPC-client (0.0.1):
+    - !ProtoCompiler-gRPCPlugin (~> 1.0)
+    - gRPC-client/Messages (= 0.0.1)
+    - gRPC-client/Services (= 0.0.1)
+  - gRPC-client/Messages (0.0.1):
+    - !ProtoCompiler-gRPCPlugin (~> 1.0)
+    - Protobuf
+  - gRPC-client/Services (0.0.1):
+    - !ProtoCompiler-gRPCPlugin (~> 1.0)
+    - gRPC-client/Messages
+    - gRPC-ProtoRPC
+  - gRPC-Core (1.7.1):
+    - gRPC-Core/Implementation (= 1.7.1)
+    - gRPC-Core/Interface (= 1.7.1)
+  - gRPC-Core/Implementation (1.7.1):
+    - BoringSSL (~> 9.0)
+    - gRPC-Core/Interface (= 1.7.1)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.7.1)
+  - gRPC-ProtoRPC (1.7.1):
+    - gRPC (= 1.7.1)
+    - gRPC-RxLibrary (= 1.7.1)
+    - Protobuf (~> 3.0)
+  - gRPC-RxLibrary (1.7.1)
+  - gRPC/Main (1.7.1):
+    - gRPC-Core (= 1.7.1)
+    - gRPC-RxLibrary (= 1.7.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - Protobuf (3.4.0)
+
+DEPENDENCIES:
+  - gRPC-client (from `.`)
+
+EXTERNAL SOURCES:
+  gRPC-client:
+    :path: .
+
+SPEC CHECKSUMS:
+  !ProtoCompiler: 07d0c441bc00e7f01e84debf7c53794683fbca7c
+  !ProtoCompiler-gRPCPlugin: 0e1777b0cfb5b85c9c4d08aa939c888ceba9b252
+  BoringSSL: 84318770d120503ab1a6aaf1df777c5ca053697e
+  gRPC: b56decfd0094854d2ccfe80c8fb767237dace3be
+  gRPC-client: b95ec23b573de64abfe1cc9ee60541937e3139fd
+  gRPC-Core: 95c4968ae43d29219226f22b656d9f625904281e
+  gRPC-ProtoRPC: b7259f51cbc19b77c7a38d96f52a00c3a4ea1637
+  gRPC-RxLibrary: 4f46343e74e74a7ee8373ffeeaf772dfb330cbd7
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: 03eef2ee0b674770735cf79d9c4d3659cf6908e8
+
+PODFILE CHECKSUM: 95bec251da64b9ac6b57015009a46ecaab4daef2
+
+COCOAPODS: 1.3.1

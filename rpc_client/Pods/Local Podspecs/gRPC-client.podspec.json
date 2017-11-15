@@ -1,0 +1,54 @@
+{
+  "name": "gRPC-client",
+  "version": "0.0.1",
+  "authors": {
+    "chris": "chris__w@163.com"
+  },
+  "license": "...",
+  "homepage": "...",
+  "summary": "...",
+  "source": {
+    "git": "https://github.com/..."
+  },
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.9"
+  },
+  "dependencies": {
+    "!ProtoCompiler-gRPCPlugin": [
+      "~> 1.0"
+    ]
+  },
+  "prepare_command": "mkdir -p Pods/gRPC-client\nPods/!ProtoCompiler/protoc         --plugin=protoc-gen-grpc=Pods/!ProtoCompiler-gRPCPlugin/grpc_objective_c_plugin         --objc_out=Pods/gRPC-client         --grpc_out=Pods/gRPC-client         -I proto         -I Pods/!ProtoCompiler         proto/*.proto",
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
+    "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES": "YES"
+  },
+  "subspecs": [
+    {
+      "name": "Messages",
+      "source_files": "Pods/gRPC-client/*.pbobjc.{h,m}",
+      "header_mappings_dir": "Pods/gRPC-client",
+      "requires_arc": false,
+      "dependencies": {
+        "Protobuf": [
+
+        ]
+      }
+    },
+    {
+      "name": "Services",
+      "source_files": "Pods/gRPC-client/*.pbrpc.{h,m}",
+      "header_mappings_dir": "Pods/gRPC-client",
+      "requires_arc": true,
+      "dependencies": {
+        "gRPC-ProtoRPC": [
+
+        ],
+        "gRPC-client/Messages": [
+
+        ]
+      }
+    }
+  ]
+}
